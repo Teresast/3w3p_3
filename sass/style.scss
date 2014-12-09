@@ -1,2 +1,484 @@
 @import "compass/reset";
 @import "compass/css3";
+
+$gold-color: #dbcc88;
+
+@mixin center($location) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: $location;
+}
+@mixin box-size($width,$height){
+	width: $width;
+	height: $height;
+}
+@mixin font-styles($color, $weight, $size) {
+    color: $color;
+    font-weight: $weight;
+    font-size: $size; 
+}
+@mixin list_style($width) {
+  width: $width;
+  float: left;
+  position: relative;
+}
+html {
+
+}
+body {
+	@include center(center);
+	font-size: 62.5%;
+	background-color: black;
+	width: 1436px;
+}
+header {
+	position: relative;
+	width: 100%;
+	height: 515px;
+	a {
+		position: absolute;
+		@include font-styles($gold-color,normal,14px);
+		cursor: pointer;
+		text-decoration: blink;
+	}
+	.home {
+		top: 1em;
+		left: 1em;
+	}
+	.login {
+		top: 1em;
+		left: 5em;
+	}
+	button {
+		position: absolute;
+		background-color: rgba(0,0,0,0);
+		@include box-size(12em,4em);
+		border:2px solid $gold-color;
+		border-radius: 1em;
+		@include font-styles($gold-color,normal,14px);
+		&:hover {
+			background-color: $gold-color;
+			border:2px solid $gold-color;
+			@include font-styles(black,normal,14px);			
+		}
+	}
+	.learn-button {
+		left: 100px;
+		top: 200px;
+	}
+	.buy-button {
+		right: 100px;
+		top: 200px;
+	}
+	div{
+		@include center(center);
+		img {
+		width: 50%;
+		}
+	}
+	
+}
+nav {
+	margin-top: 50px;
+	ul {
+		@include center(center);
+
+		li {
+			background-color: $gold-color;
+			border: 1px solid black;
+			@include list_style(33%);
+			line-height: 50px;
+			font-family: sans-serif;
+			a {
+				cursor: pointer;
+				text-decoration: blink;
+				@include font-styles(black,normal,18px);
+
+			}
+			&:hover {
+				background-color: black;
+				border:1px solid $gold-color;
+				a {
+					@include font-styles($gold-color,normal,18px);
+
+				}			
+			}
+		}
+	}
+}
+.over-view {
+		@include center(center);
+	p {
+		@include font-styles($gold-color,normal,16px);
+		padding-top: 100px;	
+		margin-right: 300px;
+		margin-left: 300px;
+		margin-bottom: 100px;		
+	  }
+}
+.shaolan {
+	position: relative;
+	border-top: 1px solid $gold-color;
+
+	ul {
+		li {
+			@include list_style(33.3333%);
+			line-height: 50px;
+			font-family: sans-serif;
+		}
+		.shaolan-common {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				@include center(center);
+				margin-top: 180px;	
+				background-size: cover;
+				line-height: 60px;
+			    background-image: url(../imgs/wordBack2.jpg);		
+			}
+			&:after {
+			    content: " ";
+			    width: 100%;
+			    height: 400px;
+			    background-size: cover;
+			    position: absolute;
+			    top: 0; 
+			    left: 0;
+			    display: none;
+			}
+			&:hover::after {
+				display: inline;
+			}
+		}
+		.shaolan1 {
+			@extend .shaolan-common;
+			p {
+			    
+			}
+			&:after {
+			    background-image: url(../imgs/shaolan1.jpg);
+			}
+		}
+		.shaolan2 {
+			height: 400px;
+			p {
+				@include center(center);
+				margin-top: 100px;
+				background-image: url(../imgs/wordBack1.jpg);
+			    background-size: cover;
+				height: 80px;
+				line-height: 83px;
+			}
+
+			@include font-styles($gold-color,normal,20px);			
+		}
+		.shaolan3 {
+			&:after {
+			    background-image: url(../imgs/shaolan3.jpg);
+			}
+		}
+		.shaolan4 {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				margin-right: 40px;
+				margin-left: 40px;			
+			}
+		}
+		.shaolan5 {
+			&:after {
+			    background-image: url(../imgs/shaolan2.jpg);
+			}
+		}
+		.shaolan6 {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				margin-right: 40px;
+				margin-left: 40px;			
+			}
+		}
+	}
+}
+.diancui {
+	// position: relative;
+	ul {
+	border-bottom: 1px solid $gold-color;
+	clear: both;
+		li {
+			@include list_style(33.3333%);
+			line-height: 50px;
+			font-family: sans-serif;
+		}
+		.diancui-common {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				@include center(center);
+				margin-top: 180px;	
+				background-size: cover;
+				line-height: 60px;
+			    background-image: url(../imgs/wordBack2.jpg);		
+			}
+			&:after {
+			    content: " ";
+			    clear: both;
+			    width: 100%;
+			    height: 400px;
+			    background-size: cover;
+			    position: absolute;
+			    top: 0; 
+			    left: 0;
+			    display: none;
+			}
+			&:hover::after {
+				display: inline;
+			}
+		}
+		.diancui1 {
+			@extend .diancui-common;
+			margin-top: 10px;
+			p {
+			    
+			}
+			&:after {
+			    background-image: url(../imgs/diancui1.jpeg);
+			}
+		}
+		.diancui2 {
+			height: 400px;
+			p {
+				@include center(center);
+				margin-top: 100px;
+				background-image: url(../imgs/wordBack1.jpg);
+			    background-size: cover;
+				height: 80px;
+				line-height: 83px;
+			}
+
+			@include font-styles($gold-color,normal,20px);			
+		}
+		.diancui3 {
+			margin-top: 10px;
+
+			&:after {
+			    background-image: url(../imgs/diancui2.jpeg);
+			}
+		}
+		.diancui4 {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				margin-right: 40px;
+				margin-left: 40px;			
+			}
+		}
+		.diancui5 {
+			&:after {
+			    background-image: url(../imgs/diancui3.jpeg);
+			}
+		}
+		.diancui6 {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				margin-right: 40px;
+				margin-left: 40px;			
+			}
+		}
+	}
+}
+
+.huasi {
+	ul {
+	border-bottom: 1px solid $gold-color;
+	clear: both;
+		li {
+			@include list_style(33.3333%);
+			line-height: 50px;
+			font-family: sans-serif;
+		}
+		.huasi-common {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				@include center(center);
+				margin-top: 180px;	
+				background-size: cover;
+				line-height: 60px;
+			    background-image: url(../imgs/wordBack2.jpg);		
+			}
+			&:after {
+			    content: " ";
+			    clear: both;
+			    width: 100%;
+			    height: 400px;
+			    background-size: cover;
+			    position: absolute;
+			    top: 0;
+			    left: 0; 
+			    display: none;
+			}
+			&:hover::after {
+				display: inline;
+			}
+		}
+		.huasi1 {
+			@extend .huasi-common;
+			margin-top: 10px;
+			p {
+			    
+			}
+			&:after {
+			    background-image: url(../imgs/huasi1.jpg);
+			}
+		}
+		.huasi2 {
+			height: 400px;
+			p {
+				@include center(center);
+				margin-top: 100px;
+				background-image: url(../imgs/wordBack1.jpg);
+			    background-size: cover;
+				height: 80px;
+				line-height: 83px;
+			}
+
+			@include font-styles($gold-color,normal,20px);			
+		}
+		.huasi3 {
+			margin-top: 10px;
+			
+			&:after {
+			    background-image: url(../imgs/huasi2.png);
+			}
+		}
+		.huasi4 {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				margin-right: 40px;
+				margin-left: 40px;			
+			}
+		}
+		.huasi5 {
+			&:after {
+			    background-image: url(../imgs/huasi3.png);
+			}
+		}
+		.huasi6 {
+			height: 400px;
+			p {
+				@include font-styles($gold-color,normal,18px);
+				margin-right: 40px;
+				margin-left: 40px;			
+			}
+		}
+	}
+}
+
+.xiandai {
+	border-top: 1px solid $gold-color;
+	margin-top: 820px;
+	.title {
+		@include center(center);
+		margin-top: 100px;
+		background-image: url(../imgs/wordBack1.jpg);
+	    background-size: cover;
+		height: 80px;
+		line-height: 83px;
+		width: 500px;
+		@include font-styles($gold-color,normal,20px);			
+	}
+	ul {
+		margin-top: 40px;
+		li {
+			border: 1px solid $gold-color;
+			@include list_style(33%);
+			    background-size: cover;
+
+			img {
+			    width: 476px;
+				height: 410px;
+				&:hover {
+
+				}
+			}
+		}
+	}
+}
+
+footer {
+	margin-top: 800px;
+	height: 600px;
+	border-top: 1px solid $gold-color;
+	// position: relative;
+	ul {
+		li {
+			margin-bottom: 60px;
+		}
+		.footer-list1 {
+			@include list_style(25%);
+			p {
+				margin-left: 60px;
+				margin-top: 300px;
+				@include font-styles($gold-color,normal,16px);
+				line-height: 30px;
+			}
+		}
+		.footer-list2 {
+		@include center(center);
+
+			@include list_style(50%);
+			p {
+			@include center(center);
+			@include font-styles($gold-color,normal,20px);			
+			margin-top: 50px;
+			margin-bottom: 50px;
+			background-image: url(../imgs/wordBack1.jpg);
+		    background-size: cover;
+			height: 80px;
+			line-height: 83px;
+			width: 500px;
+			}
+			img {
+				height: 375px;
+				width: 650px;
+			}
+		}
+		.footer-list3 {
+			@include list_style(25%);
+			p {
+				margin-right: 60px;
+				margin-top: 300px;
+				line-height: 30px;
+				@include font-styles($gold-color,normal,16px);			
+			}
+		}
+		margin-top: 40px;
+		
+	}
+
+	section {
+		margin-top: 650px;
+		// background-color: $gold-color;
+		// width: 100%;
+		// height: 40px; 
+		ul {
+			li {
+				margin-left: 30px;
+				a {
+					cursor: pointer;
+					text-decoration: blink;
+					@include font-styles($gold-color,normal,18px);
+
+				}
+				// @include list_style(12%);
+				float: left;
+				font-family: sans-serif;
+				@include font-styles(black,normal,16px);			
+
+			}
+		}
+	}
+}
